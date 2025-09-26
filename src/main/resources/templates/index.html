@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎页面 - GitHub Actions 测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2ea44f;
+        }
+        .github-actions {
+            background-color: #24292e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到我的 GitHub Actions 测试页面!</h1>
+        <p>这是一个用于测试 GitHub 工作流的简单 Spring Boot 网页。</p>
+        <p>服务器时间: <span th:text="${#dates.format(new java.util.Date(), 'yyyy-MM-dd HH:mm:ss')}">时间</span></p>
+        
+        <div class="github-actions">
+            <p>GitHub Actions 测试成功运行!</p>
+        </div>
+    </div>
+</body>
+</html>
