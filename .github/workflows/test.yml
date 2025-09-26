@@ -42,6 +42,7 @@ jobs:
         run: |
           mkdir -p _site
           cp -r src/main/resources/templates/* _site/
+          echo "构建完成，准备部署到 GitHub Pages"
       
       # 上传构建产物
       - name: Upload artifact
@@ -53,3 +54,20 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      
+      # 显示部署完成信息
+      - name: Deployment completed
+        run: |
+          echo "=========================================="
+          echo "GitHub Pages 部署说明"
+          echo "=========================================="
+          echo "部署已完成！"
+          echo ""
+          echo "请访问以下地址查看您的网站："
+          echo "https://bliua.github.io/fortest/"
+          echo ""
+          echo "如果页面无法访问，请检查："
+          echo "1. GitHub Pages 是否已在仓库设置中启用"
+          echo "2. 仓库设置中的 Pages 源是否设置为 GitHub Actions"
+          echo "3. 您的用户名和仓库名是否正确"
+          echo "=========================================="

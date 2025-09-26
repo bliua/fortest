@@ -34,13 +34,22 @@
             font-weight: bold;
             color: #0366d6;
         }
+        .current-time {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #d63384;
+            margin: 20px 0;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>欢迎来到我的 GitHub Actions 测试页面!</h1>
         <p>这是一个用于测试 GitHub 工作流的简单静态网页。</p>
-        <p>页面加载时间: <span class="time" id="time"></span></p>
+        
+        <div class="current-time">
+            当前时间: <span id="current-time"></span>
+        </div>
         
         <div class="github-actions">
             <p>GitHub Actions 静态网站部署成功运行!</p>
@@ -50,8 +59,17 @@
     </div>
     
     <script>
-        // 显示当前时间
-        document.getElementById('time').textContent = new Date().toLocaleString();
+        // 实时显示当前时间并每秒更新
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('current-time').textContent = now.toLocaleString();
+        }
+        
+        // 页面加载时立即显示时间
+        updateTime();
+        
+        // 每秒更新时间显示
+        setInterval(updateTime, 1000);
     </script>
 </body>
 </html>
