@@ -40,6 +40,8 @@ jobs:
       # 设置 Pages
       - name: Setup Pages
         uses: actions/configure-pages@v3
+        with:
+          enablement: true  # 自动启用GitHub Pages（如果尚未启用）
       
       # 构建静态文件
       - name: Build with Maven
