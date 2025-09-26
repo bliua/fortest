@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,17 +30,28 @@
             display: inline-block;
             margin-top: 20px;
         }
+        .time {
+            font-weight: bold;
+            color: #0366d6;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>欢迎来到我的 GitHub Actions 测试页面!</h1>
-        <p>这是一个用于测试 GitHub 工作流的简单 Spring Boot 网页。</p>
-        <p>服务器时间: <span th:text="${#dates.format(new java.util.Date(), 'yyyy-MM-dd HH:mm:ss')}">时间</span></p>
+        <p>这是一个用于测试 GitHub 工作流的简单静态网页。</p>
+        <p>页面加载时间: <span class="time" id="time"></span></p>
         
         <div class="github-actions">
-            <p>GitHub Actions 测试成功运行!</p>
+            <p>GitHub Actions 静态网站部署成功运行!</p>
         </div>
+        
+        <p>此页面已通过 GitHub Actions 自动部署到 GitHub Pages</p>
     </div>
+    
+    <script>
+        // 显示当前时间
+        document.getElementById('time').textContent = new Date().toLocaleString();
+    </script>
 </body>
 </html>
